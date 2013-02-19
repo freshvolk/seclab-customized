@@ -1,8 +1,8 @@
-#!/bin/bash
-
-function brianmode {
-      if $boom
+brianmode () {
+   cd
+      if [ -d "briansettings" ]
       then
+         echo $boom
          cd
          cd briansettings
          mv .vimbk ../.vimrc
@@ -11,8 +11,9 @@ function brianmode {
          rm -rf briansettings
          export boom=cow
    
-      elif [ $boom -eq "cow" ]
+      elif ! [ -d "briansettings" ]
       then
+         echo 'sheep'
          # To home we go
          cd
              
@@ -35,8 +36,9 @@ function brianmode {
          # tar -xvf seclabfish.tar
          # ./seclabfish/bin/fish
 
-         export boom=true
     else
        echo "WHERE'S RACHEL"
     fi
  }
+
+brianmode
