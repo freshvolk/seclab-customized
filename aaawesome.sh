@@ -2,6 +2,7 @@ brianmode () {
    cd
       if [ -d "briansettings" ]
       then
+         rm aawesome.sh
          echo $boom
          cd
          cd briansettings
