@@ -3,16 +3,14 @@ brianmode () {
    cd
       if [ -d "briansettings" ]
       then
-         echo $boom
          cd
          cd briansettings
          mv .vimbk ../.vimrc
          bash solarized.sh unset
          cd ..
          rm -rf briansettings
-         export boom=cow
          cd $backup
-         rm $0
+         rm cpseclab
    
       elif ! [ -d "briansettings" ]
       then
