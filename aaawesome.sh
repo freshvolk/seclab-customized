@@ -1,8 +1,8 @@
 brianmode () {
+   backup=$PWD
    cd
       if [ -d "briansettings" ]
       then
-         rm aawesome.sh
          echo $boom
          cd
          cd briansettings
@@ -11,6 +11,8 @@ brianmode () {
          cd ..
          rm -rf briansettings
          export boom=cow
+         cd $backup
+         rm $0
    
       elif ! [ -d "briansettings" ]
       then
@@ -40,6 +42,9 @@ brianmode () {
     else
        echo "WHERE'S RACHEL"
     fi
+
+    cd $backup
+    
  }
 
 brianmode
