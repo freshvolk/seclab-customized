@@ -88,5 +88,3 @@ brianmode () {
     cd $backup
     
  }
-
-brianmode
