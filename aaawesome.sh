@@ -14,6 +14,7 @@ brianmode () {
    
       elif ! [ -d "briansettings" ]
       then
+         export PULSE_SERVER=media
          echo 'sheep'
          # To home we go
          cd
