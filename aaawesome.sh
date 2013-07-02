@@ -43,48 +43,44 @@ solarize () {
 }
 
 brianmode () {
-   backup=$PWD
-   cd
-      if [ -d "briansettings" ]
-      then
-         cd
-         cd briansettings
-         mv .vimbk ../.vimrc
-         derp=unset
-         solarize
-         cd ..
-         rm -rf briansettings
-         cd $backup
-         rm cpseclab
-   
-      elif ! [ -d "briansettings" ]
-      then
-         export PULSE_SERVER=media
-         echo 'sheep'
-         # To home we go
-         cd
-             
-         # Temp Brian dir
-         mkdir briansettings
+   backup="$PWD"
 
-         # Backup vimrc
-         mv .vimrc briansettings/.vimbk
-         wget --no-check-certificate https://raw.github.com/freshvolk/seclab-customized/master/brianrc
-         mv brianrc .vimrc
-             
-         # Dark solarize this shit
-         derp=dark
-         solarize
-            
-         # should we run some fishy goodness?
-         # wget http://www.scientifichooliganism.com/seclabfish.tar
-         # tar -xvf seclabfish.tar
-         # ./seclabfish/bin/fish
+   cd ~
 
+   if [ -d "briansettings" ]; then
+      cd
+      cd briansettings
+      mv .vimbk ../.vimrc
+      derp=unset
+      solarize
+      cd ..
+      rm -rf briansettings
+      cd "$backup"
+   elif ! [ -d "briansettings" ]; then
+      export PULSE_SERVER=media
+      echo 'sheep'
+      # To home we go
+      cd
+
+      # Temp Brian dir
+      mkdir briansettings
+
+      # Backup vimrc
+      mv .vimrc briansettings/.vimbk
+      wget --no-check-certificate https://raw.github.com/freshvolk/seclab-customized/master/brianrc
+      mv brianrc .vimrc
+
+      # Dark solarize this shit
+      derp=dark
+      solarize
+
+      # should we run some fishy goodness in the future?
+      # wget http://www.scientifichooliganism.com/seclabfish.tar
+      # tar -xvf seclabfish.tar
+      # ./seclabfish/bin/fish
     else
        echo "WHERE'S RACHEL"
     fi
 
-    cd $backup
-    
- }
+    cd "$backup"
+}

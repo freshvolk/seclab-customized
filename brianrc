@@ -38,7 +38,6 @@ set modeline           " check for a modeline
 set softtabstop=3      " see spaces as tabs
 set scrolloff=5        " start scrolling when cursor is N lines from edge
 set path=.,,~/dev**    " sets path to the Code directory
-set mouse=a            " Enable mouse actions, for serious
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " settings for autoindentation, comments, and what-have-you
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -63,3 +62,5 @@ set pastetoggle=<F2>
 " fold this code neatly
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldmethod=syntax
+
+" vim: set ft=vim:
